@@ -1,46 +1,16 @@
 package view;
-
-import dao.DBConnection;
-import model.Document;
-
-import java.sql.*;
-import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 
 public class view {
     static Scanner sc = new Scanner(System.in);
 
-//    private static int menu() {
-//        int n;
-//        do {
-//
-//            System.out.println("----------------- QUẢN LÝ THƯ VIỆN -----------------");
-//            System.out.println("1. Quản lý thông tin tài liệu");
-//            System.out.println("2. Quản lý bạn đọc và nhân viên");
-//            System.out.println("3. Quản lý nhân viên");
-//            System.out.println("4. Quản lý thông tin mượn trả ");
-//            System.out.println("5. Quản lý phiếu mượn");
-//            System.out.println("0. Thoát");
-//            System.out.println("Mời bạn chọn chức năng: ");
-//            String input;
-//            do {
-//                input = sc.nextLine();
-//            } while (!isnumber(input));
-//            n = Integer.parseInt(input);
-//
-//        } while (!checkNumber(n));
-//        return n;
-//    }
 
     public static void main(String[] args) {
-//
         view v = new view();
 
         int choice;
         do {
-//            choice = menu();
             System.out.println("----------------- QUẢN LÝ THƯ VIỆN -----------------");
             System.out.println("1. Quản lý thông tin tài liệu");
             System.out.println("2. Quản lý bạn đọc ");
