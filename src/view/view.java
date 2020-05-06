@@ -1,4 +1,8 @@
 package view;
+
+import controller.BookCtrl;
+import model.Book;
+
 import java.util.Scanner;
 
 
@@ -9,7 +13,7 @@ public class view {
     public static void main(String[] args) {
         view v = new view();
 
-        int choice;
+        int choice = 0;
         do {
             System.out.println("----------------- QUẢN LÝ THƯ VIỆN -----------------");
             System.out.println("1. Quản lý thông tin tài liệu");
@@ -19,11 +23,17 @@ public class view {
             System.out.println("5. Quản lý phiếu mượn");
             System.out.println("0. Thoát");
             System.out.println("Mời bạn chọn chức năng: ");
-            String input;
+            boolean isOK = false;
             do {
-                input = sc.nextLine();
-            } while (!isnumber(input));
-            choice = Integer.parseInt(input);
+                try {
+                    choice = Integer.parseInt(sc.nextLine());
+                    isOK = true;
+                } catch (Exception e) {
+                    System.out.println("Nhập sai chức năng. Mời nhập lại: ");
+                }
+            } while (!isOK);
+
+
             switch (choice) {
                 case 1:
                     v.docFunction();
@@ -44,14 +54,14 @@ public class view {
                     System.out.println("-------------------CẢM ƠN QUÝ KHÁCH-------------------");
                     System.exit(0);
                 default:
-                    System.out.println("sai chức năng. Mời nhập lại");
+                    System.out.println("Nhập sai chức năng!");
             }
         } while (choice != 0);
 
     }
 
     private int docFunction() {
-        int n;
+        int n = 0;
         do {
             System.out.println("----------------- QUẢN LÝ THÔNG TIN TÀI LIỆU -----------------");
             System.out.println("1. Nhập thêm sách mới");
@@ -60,14 +70,21 @@ public class view {
             System.out.println("4. Tìm kiếm sách theo thông tin:");
             System.out.println("0. Quay lại");
             System.out.println("Mời bạn chọn chức năng: ");
-            String input;
+            boolean isOK = false;
             do {
-                input = sc.nextLine();
-            } while (!isnumber(input));
-            n = Integer.parseInt(input);
+                try {
+                    n = Integer.parseInt(sc.nextLine());
+                    isOK = true;
+                } catch (Exception e) {
+                    System.out.println("Nhập sai chức năng. Mời nhập lại: ");
+                }
+            } while (!isOK);
             switch (n) {
                 case 1:
                     System.out.println("Nhập thông tin sách");
+                    BookCtrl book = new BookCtrl();
+                    Book b = book.addFromKeyBroad();
+                    System.out.println(b);
                     break;
                 case 2:
                     System.out.println("Sửa thông tin sách");
@@ -90,7 +107,7 @@ public class view {
     }
 
     private int searchBookMenu() {
-        int n;
+        int n = 0;
         do {
             System.out.println("-----------------TÌM KIẾM SÁCH -----------------");
             System.out.println("1. Theo tên sách");
@@ -99,11 +116,15 @@ public class view {
             System.out.println("4. Thể loại");
             System.out.println("0. Thoát");
             System.out.println("Mời bạn chọn chức năng: ");
-            String input;
+            boolean isOK = false;
             do {
-                input = sc.nextLine();
-            } while (!isnumber(input));
-            n = Integer.parseInt(input);
+                try {
+                    n = Integer.parseInt(sc.nextLine());
+                    isOK = true;
+                } catch (Exception e) {
+                    System.out.println("Nhập sai chức năng. Mời nhập lại: ");
+                }
+            } while (!isOK);
             switch (n) {
                 case 1:
                     System.out.println("Bạn chọn chức năng 1");
@@ -127,7 +148,7 @@ public class view {
     }
 
     private int readerFun() {
-        int n;
+        int n = 0;
         do {
             System.out.println("----------------- QUẢN LÝ THÔNG TIN BẠN ĐỌC -----------------");
             System.out.println("1. Nhập thêm bạn đọc mới mới");
@@ -136,11 +157,15 @@ public class view {
             System.out.println("4. Tìm kiếm bạn đọc theo thông tin:");
             System.out.println("0. Thoát");
             System.out.println("Mời bạn chọn chức năng: ");
-            String input;
+            boolean isOK = false;
             do {
-                input = sc.nextLine();
-            } while (!isnumber(input));
-            n = Integer.parseInt(input);
+                try {
+                    n = Integer.parseInt(sc.nextLine());
+                    isOK = true;
+                } catch (Exception e) {
+                    System.out.println("Nhập sai chức năng. Mời nhập lại: ");
+                }
+            } while (!isOK);
             switch (n) {
                 case 1:
                     System.out.println("Nhập mới bạn đọc");
@@ -165,7 +190,7 @@ public class view {
     }
 
     private int searchReader() {
-        int n;
+        int n = 0;
         do {
             System.out.println("-----------------TÌM KIẾM BẠN ĐỌC -----------------");
             System.out.println("1. Theo tên bạn đọc");
@@ -173,11 +198,15 @@ public class view {
             System.out.println("3. Theo loại bạn đọc ");
             System.out.println("0. Quay lại");
             System.out.println("Mời bạn chọn chức năng: ");
-            String input;
+            boolean isOK = false;
             do {
-                input = sc.nextLine();
-            } while (!isnumber(input));
-            n = Integer.parseInt(input);
+                try {
+                    n = Integer.parseInt(sc.nextLine());
+                    isOK = true;
+                } catch (Exception e) {
+                    System.out.println("Nhập sai chức năng. Mời nhập lại: ");
+                }
+            } while (!isOK);
             switch (n) {
                 case 1:
                     System.out.println("Tìm kiếm theo tên bạn đọc");
@@ -199,7 +228,7 @@ public class view {
     }
 
     private int EmployeeFun() {
-        int n;
+        int n = 0;
         do {
 
             System.out.println("----------------- QUẢN LÝ THÔNG TIN NHÂN VIÊN -----------------");
@@ -209,11 +238,15 @@ public class view {
             System.out.println("4. Tìm kiếm nhân viên theo thông tin:");
             System.out.println("0. Thoát");
             System.out.println("Mời bạn chọn chức năng: ");
-            String input;
+            boolean isOK = false;
             do {
-                input = sc.nextLine();
-            } while (!isnumber(input));
-            n = Integer.parseInt(input);
+                try {
+                    n = Integer.parseInt(sc.nextLine());
+                    isOK = true;
+                } catch (Exception e) {
+                    System.out.println("Nhập sai chức năng. Mời nhập lại: ");
+                }
+            } while (!isOK);
             switch (n) {
                 case 1:
                     System.out.println("Nhập mới nhân viên");
@@ -238,7 +271,7 @@ public class view {
     }
 
     private int searchEmployee() {
-        int n;
+        int n = 0;
         do {
             System.out.println("-----------------TÌM KIẾM BẠN ĐỌC -----------------");
             System.out.println("1. Theo tên nhân viên");
@@ -246,11 +279,15 @@ public class view {
             System.out.println("3. Theo loại nhân viên ");
             System.out.println("0. Quay lại");
             System.out.println("Mời bạn chọn chức năng: ");
-            String input;
+            boolean isOK = false;
             do {
-                input = sc.nextLine();
-            } while (!isnumber(input));
-            n = Integer.parseInt(input);
+                try {
+                    n = Integer.parseInt(sc.nextLine());
+                    isOK = true;
+                } catch (Exception e) {
+                    System.out.println("Nhập sai chức năng. Mời nhập lại: ");
+                }
+            } while (!isOK);
             switch (n) {
                 case 1:
                     System.out.println("Tìm kiếm theo tên nhân viên");
@@ -272,7 +309,7 @@ public class view {
     }
 
     private int borrowFun() {
-        int n;
+        int n = 0;
         do {
             System.out.println("----------------- QUẢN LÝ THÔNG TIN MƯỢN TRẢ-----------------");
             System.out.println("1. Tạo thông tin");
@@ -280,11 +317,15 @@ public class view {
             System.out.println("3. Tìm kiếm theo tên bạn đọc:");
             System.out.println("0. Thoát");
             System.out.println("Mời bạn chọn chức năng: ");
-            String input;
+            boolean isOK = false;
             do {
-                input = sc.nextLine();
-            } while (!isnumber(input));
-            n = Integer.parseInt(input);
+                try {
+                    n = Integer.parseInt(sc.nextLine());
+                    isOK = true;
+                } catch (Exception e) {
+                    System.out.println("Nhập sai chức năng. Mời nhập lại: ");
+                }
+            } while (!isOK);
             switch (n) {
                 case 1:
                     System.out.println("Tạo thông tin");
@@ -307,7 +348,7 @@ public class view {
     }
 
     private int createInfo() {
-        int n;
+        int n = 0;
         do {
             System.out.println("-----------------TẠO THÔNG TIN QUẢN LÝ MƯỢN TRẢ -----------------");
             System.out.println("1. Thêm thông tin");
@@ -315,11 +356,15 @@ public class view {
             System.out.println("3. Xóa thông tin ");
             System.out.println("0. Quay lại");
             System.out.println("Mời bạn chọn chức năng: ");
-            String input;
+            boolean isOK = false;
             do {
-                input = sc.nextLine();
-            } while (!isnumber(input));
-            n = Integer.parseInt(input);
+                try {
+                    n = Integer.parseInt(sc.nextLine());
+                    isOK = true;
+                } catch (Exception e) {
+                    System.out.println("Nhập sai chức năng. Mời nhập lại: ");
+                }
+            } while (!isOK);
             switch (n) {
                 case 1:
                     System.out.println("Thêm thông tin");
@@ -340,18 +385,22 @@ public class view {
     }
 
     private int sortList() {
-        int n;
+        int n = 0;
         do {
             System.out.println("-----------------SẮP XẾP DANH SÁCH-----------------");
             System.out.println("1. Theo tên bạn đọc");
             System.out.println("2. Theo số lượng đầu sách được mượn(Giảm dần)");
             System.out.println("0. Quay lại");
             System.out.println("Mời bạn chọn chức năng: ");
-            String input;
+            boolean isOK = false;
             do {
-                input = sc.nextLine();
-            } while (!isnumber(input));
-            n = Integer.parseInt(input);
+                try {
+                    n = Integer.parseInt(sc.nextLine());
+                    isOK = true;
+                } catch (Exception e) {
+                    System.out.println("Nhập sai chức năng. Mời nhập lại: ");
+                }
+            } while (!isOK);
             switch (n) {
                 case 1:
                     System.out.println("Sắp xếp theo tên bạn đọc");
@@ -369,7 +418,7 @@ public class view {
     }
 
     private int billFun() {
-        int n;
+        int n = 0;
         do {
             System.out.println("----------------- QUẢN LÝ THÔNG TIN PHIẾU MƯỢN -----------------");
             System.out.println("1. Xuất thông tin phiếu mượn  cho bạn đọc hiện thời");
@@ -377,11 +426,15 @@ public class view {
             System.out.println("3. Xuất thông tin bạn đọc mượn sách  ");
             System.out.println("0. Thoát");
             System.out.println("Mời bạn chọn chức năng: ");
-            String input;
+            boolean isOK = false;
             do {
-                input = sc.nextLine();
-            } while (!isnumber(input));
-            n = Integer.parseInt(input);
+                try {
+                    n = Integer.parseInt(sc.nextLine());
+                    isOK = true;
+                } catch (Exception e) {
+                    System.out.println("Nhập sai chức năng. Mời nhập lại: ");
+                }
+            } while (!isOK);
             switch (n) {
                 case 1:
                     System.out.println("Xuất thông tin phiếu mượn");
@@ -403,18 +456,22 @@ public class view {
     }
 
     private int showBookBorrow() {
-        int n;
+        int n = 0;
         do {
             System.out.println("-----------------HIỂN THỊ SÁCH ĐƯỢC MƯỢN-----------------");
             System.out.println("1. Nhiều nhất");
             System.out.println("2. Ít nhất");
             System.out.println("0. Quay lại");
             System.out.println("Mời bạn chọn chức năng: ");
-            String input;
+            boolean isOK = false;
             do {
-                input = sc.nextLine();
-            } while (!isnumber(input));
-            n = Integer.parseInt(input);
+                try {
+                    n = Integer.parseInt(sc.nextLine());
+                    isOK = true;
+                } catch (Exception e) {
+                    System.out.println("Nhập sai chức năng. Mời nhập lại: ");
+                }
+            } while (!isOK);
             switch (n) {
                 case 1:
                     System.out.println("Thông tin sách được mượn nhiều nhất");
@@ -432,18 +489,22 @@ public class view {
     }
 
     private int showReaderBorrow() {
-        int n;
+        int n = 0;
         do {
             System.out.println("-----------------HIỂN THỊ BẠN ĐỌC MƯỢN SÁCH-----------------");
             System.out.println("1. Nhiều nhất");
             System.out.println("2. Ít nhất");
             System.out.println("0. Quay lại");
             System.out.println("Mời bạn chọn chức năng: ");
-            String input;
+            boolean isOK = false;
             do {
-                input = sc.nextLine();
-            } while (!isnumber(input));
-            n = Integer.parseInt(input);
+                try {
+                    n = Integer.parseInt(sc.nextLine());
+                    isOK = true;
+                } catch (Exception e) {
+                    System.out.println("Nhập sai chức năng. Mời nhập lại: ");
+                }
+            } while (!isOK);
             switch (n) {
                 case 1:
                     System.out.println("Thông tin bạn đọc mượn nhiều sách nhất");
@@ -460,15 +521,5 @@ public class view {
         return n;
     }
 
-    private static boolean isnumber(String str) {
-        try {
-            Integer.parseInt(str);
-            return true;
-        } catch (NumberFormatException e) {
-            System.out.println("Mời nhập lại đúng chức năng! ");
-            return false;
-        }
-
-    }
 
 }

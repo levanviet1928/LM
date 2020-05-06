@@ -9,8 +9,8 @@ public class Book extends Document {
 
 	}
 
-	public Book(String documentName, String author, int publishYear, int quantity, String bookID, String type) {
-		super(documentName, author, publishYear, quantity);
+	public Book(String docID, String documentName, String author, int publishYear, int quantity, String bookID, String type) {
+		super(docID, documentName, author, publishYear, quantity);
 		this.bookID = bookID;
 		this.type = type;
 	}
@@ -37,7 +37,7 @@ public class Book extends Document {
 
 	@Override
 	public String toString() {
-		return super.toString() +"Book{" +
+		return super.toString() + "Book{" +
 				"bookID='" + bookID + '\'' +
 				", type='" + type + '\'' +
 				'}';

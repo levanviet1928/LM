@@ -1,7 +1,7 @@
 package model;
 
 public class Document {
-
+	private String docID;
 	private String documentName;
 	private String author;
 	private int publishYear;
@@ -10,7 +10,8 @@ public class Document {
 	public Document() {
 	}
 
-	public Document(String documentName, String author, int publishYear, int quantity) {
+	public Document(String docID, String documentName, String author, int publishYear, int quantity) {
+		this.docID = docID;
 		this.documentName = documentName;
 		this.author = author;
 		this.publishYear = publishYear;
@@ -19,6 +20,14 @@ public class Document {
 
 	public Document(String documentName) {
 		this.documentName = documentName;
+	}
+
+	public String getDocID() {
+		return docID;
+	}
+
+	public void setDocID(String docID) {
+		this.docID = docID;
 	}
 
 	public String getDocumentName() {
@@ -56,10 +65,11 @@ public class Document {
 	@Override
 	public String toString() {
 		return "Document{" +
-				"documentName='" + documentName + '\'' +
+				"docID='" + docID + '\'' +
+				", documentName='" + documentName + '\'' +
 				", author='" + author + '\'' +
-				", publishYear= " + publishYear +
-				", quantity= " + quantity +
+				", publishYear=" + publishYear +
+				", quantity=" + quantity +
 				'}';
 	}
 }
