@@ -1,5 +1,6 @@
 package controller;
 
+import dao.DocumentDAO;
 import model.Document;
 
 import java.util.Scanner;
@@ -11,6 +12,7 @@ public class DocumentCtrl implements Ctr<Document> {
         if (id.matches(regex)) {
             return true;
         }
+        System.out.println("sai mã tài liệu. Mời nhập lại: ");
         return false;
     }
 
@@ -29,8 +31,24 @@ public class DocumentCtrl implements Ctr<Document> {
         do {
             docId = sc.nextLine();
         } while (!checkID(docId));
+        DocumentDAO documentDAO = new DocumentDAO();
+        boolean isIDvalid = documentDAO.isIDValid(docId, "dbo.Document");
+        while (!isIDvalid) {
+            System.out.println("Mã đã tồn tại");
+            System.out.println("Nhập mã tài liệu:(ví dụ : DOC_xxxxxx)");
+            docId = sc.nextLine();
+            isIDvalid = documentDAO.isIDValid(docId, "dbo.Document");
+        }
+
         System.out.println("Nhập tiêu đề: ");
         String docName = sc.nextLine();
+        boolean isNamevalid = documentDAO.isNameValid(docName);
+        while (!isNamevalid) {
+            System.out.println("Tên tài liệu  đã tồn tại");
+            System.out.println("Nhập tên  liệu:");
+            docName = sc.nextLine();
+            isNamevalid = documentDAO.isNameValid(docName);
+        }
         System.out.println("Nhập tác giả: ");
         String author = sc.nextLine();
         boolean isOK = false;

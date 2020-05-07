@@ -11,12 +11,13 @@ public class BookCtrl extends DocumentCtrl {
         if (id.matches(regex)) {
             return true;
         }
+        System.out.println("sai mã sách. Mời nhập lại: ");
         return false;
     }
 
     @Override
     public void show(Document p) {
-
+        super.show(p);
     }
 
 

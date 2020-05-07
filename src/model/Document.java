@@ -64,12 +64,10 @@ public class Document {
 
 	@Override
 	public String toString() {
-		return "Document{" +
-				"docID='" + docID + '\'' +
+		return " docID='" + docID + '\'' +
 				", documentName='" + documentName + '\'' +
 				", author='" + author + '\'' +
 				", publishYear=" + publishYear +
-				", quantity=" + quantity +
-				'}';
+				", quantity=" + quantity;
 	}
 }

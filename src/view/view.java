@@ -84,7 +84,7 @@ public class view {
                     System.out.println("Nhập thông tin sách");
                     BookCtrl book = new BookCtrl();
                     Book b = book.addFromKeyBroad();
-                    System.out.println(b);
+                    book.show(b);
                     break;
                 case 2:
                     System.out.println("Sửa thông tin sách");
