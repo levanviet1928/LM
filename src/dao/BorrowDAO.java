@@ -14,19 +14,21 @@ public class BorrowDAO implements DAO<Borrow> {
 	}
 
 	/**
-	 * 
+     *
 	 * @param id
+     * @return
 	 */
-	public void edit(String id) {
+    public boolean edit(String id, Borrow key) {
 		// TODO - implement BorrowDAO.edit
 		throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * 
-	 * @param id
-	 */
-	public void remove(String id) {
+     *
+     * @param id
+     * @return
+     */
+    public boolean remove(String id) {
 		// TODO - implement BorrowDAO.remove
 		throw new UnsupportedOperationException();
 	}

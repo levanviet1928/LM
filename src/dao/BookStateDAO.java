@@ -12,10 +12,11 @@ public class BookStateDAO implements DAO<BookState> {
 	}
 
 	/**
-	 * 
+     *
 	 * @param id
+     * @return
 	 */
-	public void edit(String id) {
+    public boolean edit(String id, BookState key) {
 		// TODO - implement BookStateDAO.edit
 		throw new UnsupportedOperationException();
 	}
@@ -26,10 +27,11 @@ public class BookStateDAO implements DAO<BookState> {
 	}
 
 	/**
-	 * 
-	 * @param id
-	 */
-	public void remove(String id) {
+     *
+     * @param id
+     * @return
+     */
+    public boolean remove(String id) {
 		// TODO - implement BookStateDAO.remove
 		throw new UnsupportedOperationException();
 	}

@@ -11,10 +11,11 @@ public interface DAO<T> {
 	void add(T key);
 
 	/**
-	 * 
+     *
 	 * @param id
+     * @return
 	 */
-	void edit(String id);
+    boolean edit(String id, T key);
 
 	/**
 	 * 
@@ -23,10 +24,11 @@ public interface DAO<T> {
 	List<T> findByName(String name);
 
 	/**
-	 * 
-	 * @param id
-	 */
-	void remove(String id);
+     *
+     * @param id
+     * @return
+     */
+    boolean remove(String id);
 
 	/**
 	 * 

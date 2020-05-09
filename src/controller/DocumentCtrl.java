@@ -7,14 +7,14 @@ import java.util.Scanner;
 
 public class DocumentCtrl implements Ctr<Document> {
 
-    private boolean checkID(String id) {
-        String regex = "^DOC_\\d{6}$";
-        if (id.matches(regex)) {
-            return true;
-        }
-        System.out.println("sai mã tài liệu. Mời nhập lại: ");
-        return false;
-    }
+//    private boolean checkID(String id) {
+//        String regex = "^DOC_\\d{6}$";
+//        if (id.matches(regex)) {
+//            return true;
+//        }
+//        System.out.println("sai mã tài liệu. Mời nhập lại: ");
+//        return false;
+//    }
 
     @Override
     public void show(Document p) {
@@ -26,19 +26,20 @@ public class DocumentCtrl implements Ctr<Document> {
         Scanner sc = new Scanner(System.in);
 
         // DOC_012345
-        System.out.println("Nhập mã tài liệu:(ví dụ : DOC_xxxxxx)");
+//        System.out.println("Nhập mã tài liệu:(ví dụ : DOC_xxxxxx)");
         String docId = "";
-        do {
-            docId = sc.nextLine();
-        } while (!checkID(docId));
         DocumentDAO documentDAO = new DocumentDAO();
-        boolean isIDvalid = documentDAO.isIDValid(docId, "dbo.Document");
-        while (!isIDvalid) {
-            System.out.println("Mã đã tồn tại");
-            System.out.println("Nhập mã tài liệu:(ví dụ : DOC_xxxxxx)");
-            docId = sc.nextLine();
-            isIDvalid = documentDAO.isIDValid(docId, "dbo.Document");
-        }
+//        do {
+//            docId = sc.nextLine();
+//        } while (!checkID(docId));
+//
+//        boolean isIDvalid = documentDAO.isIDValid(docId, "dbo.Document");
+//        while (!isIDvalid) {
+//            System.out.println("Mã đã tồn tại");
+//            System.out.println("Nhập mã tài liệu:(ví dụ : DOC_xxxxxx)");
+//            docId = sc.nextLine();
+//            isIDvalid = documentDAO.isIDValid(docId, "dbo.Document");
+//        }
 
         System.out.println("Nhập tiêu đề: ");
         String docName = sc.nextLine();
@@ -68,5 +69,10 @@ public class DocumentCtrl implements Ctr<Document> {
         Document doc = new Document(docId, docName, author, publishYear, amount);
         return doc;
     }
-
+//    public void editDocument(){
+//        Document doc = addFromKeyBroad();
+//        DocumentDAO documentDAO = new DocumentDAO();
+//        BookCtrl bookCtrl =
+//        documentDAO.edit(id, doc);
+//    }
 }

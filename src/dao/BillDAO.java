@@ -37,20 +37,13 @@ public class BillDAO implements DAO<Bill> {
 
     /**
      * @param id
+     * @return
      */
-    public void remove(String id) {
+    public boolean remove(String id) {
         // TODO - implement BillDAO.remove
         throw new UnsupportedOperationException();
     }
 
-
-    /**
-     * @param id
-     */
-    public void edit(String id) {
-        // TODO - implement BillDAO.edit
-        throw new UnsupportedOperationException();
-    }
 
     /**
      * @param b
@@ -58,6 +51,11 @@ public class BillDAO implements DAO<Bill> {
     public void add(Bill b) {
         // TODO - implement BillDAO.add
         throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean edit(String id, Bill key) {
+        return false;
     }
 
     /**

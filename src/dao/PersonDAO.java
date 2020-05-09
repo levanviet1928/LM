@@ -14,10 +14,11 @@ public class PersonDAO implements DAO<Person> {
 	}
 
 	/**
-	 * 
+     *
 	 * @param id
+     * @return
 	 */
-	public void edit(String id) {
+    public boolean edit(String id, Person key) {
 		// TODO - implement PersonDAO.edit
 		throw new UnsupportedOperationException();
 	}
@@ -41,10 +42,11 @@ public class PersonDAO implements DAO<Person> {
 	}
 
 	/**
-	 * 
-	 * @param id
-	 */
-	public void remove(String id) {
+     *
+     * @param id
+     * @return
+     */
+    public boolean remove(String id) {
 		// TODO - implement PersonDAO.remove
 		throw new UnsupportedOperationException();
 	}

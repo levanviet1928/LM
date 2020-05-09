@@ -13,19 +13,21 @@ public class EmployeeDAO extends PersonDAO {
 	}
 
 	/**
-	 * 
-	 * @param id
-	 */
-	public void remove(String id) {
+     *
+     * @param id
+     * @return
+     */
+    public boolean remove(String id) {
 		// TODO - implement EmployeeDAO.remove
 		throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * 
+     *
 	 * @param id
+     * @return
 	 */
-	public void edit(String id) {
+    public boolean edit(String id, Person key) {
 		// TODO - implement EmployeeDAO.edit
 		throw new UnsupportedOperationException();
 	}

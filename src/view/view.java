@@ -1,6 +1,7 @@
 package view;
 
 import controller.BookCtrl;
+import dao.BookDAO;
 import model.Book;
 
 import java.util.Scanner;
@@ -82,12 +83,16 @@ public class view {
             switch (n) {
                 case 1:
                     System.out.println("Nhập thông tin sách");
-                    BookCtrl book = new BookCtrl();
-                    Book b = book.addFromKeyBroad();
-                    book.show(b);
+                    BookCtrl bookCtrl = new BookCtrl();
+                    Book book = bookCtrl.addFromKeyBroad();
+                    BookDAO bookDAO = new BookDAO();
+                    bookDAO.add(book);
+                    bookCtrl.show(book);
                     break;
                 case 2:
                     System.out.println("Sửa thông tin sách");
+                    BookCtrl bookCtrl1 = new BookCtrl();
+                    bookCtrl1.editBook();
                     break;
                 case 3:
                     System.out.println("Xóa sách");

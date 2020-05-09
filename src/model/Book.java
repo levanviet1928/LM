@@ -15,7 +15,13 @@ public class Book extends Document {
 		this.type = type;
 	}
 
-	public Book(String bookID) {
+    public Book(String docID, String bookID, String type) {
+        super(docID);
+        this.bookID = bookID;
+        this.type = type;
+    }
+
+    public Book(String bookID) {
 		this.bookID = bookID;
 	}
 

@@ -10,16 +10,18 @@ public class ReaderDAO extends PersonDAO {
 
     /**
      * @param id
+     * @return
      */
-    public void remove(String id) {
+    public boolean remove(String id) {
         // TODO - implement ReaderDAO.remove
         throw new UnsupportedOperationException();
     }
 
     /**
      * @param id
+     * @return
      */
-    public void edit(String id) {
+    public boolean edit(String id, Person key) {
         // TODO - implement ReaderDAO.edit
         throw new UnsupportedOperationException();
     }
